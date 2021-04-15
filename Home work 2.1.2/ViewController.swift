@@ -38,18 +38,16 @@ class ViewController: UIViewController {
     @IBAction func changeCollorButton() {
         if redTurn && !yellowTurn && !greenTurn {
             redSignal.alpha = 1
-            yellowSignal.alpha = 0.3
             greenSignal.alpha = 0.3
             redTurn = false
             yellowTurn = true
+            startButton.setTitle("NEXT", for: .normal)
         } else if !redTurn && yellowTurn && !greenTurn {
             redSignal.alpha = 0.3
             yellowSignal.alpha = 1
-            greenSignal.alpha = 0.3
             yellowTurn = false
             greenTurn = true
         } else if !redTurn && !yellowTurn && greenTurn {
-            redSignal.alpha = 0.3
             yellowSignal.alpha = 0.3
             greenSignal.alpha = 1
             greenTurn = false
@@ -65,6 +63,8 @@ class ViewController: UIViewController {
         redTurn = true
         greenTurn = false
         yellowTurn = false
+        
+        startButton.setTitle("START", for: .normal)
     }
 }
 
